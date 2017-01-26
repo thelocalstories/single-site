@@ -1,0 +1,59 @@
+/*Grid system - 6 columns*/
+
+/* Global
+================================ */
+.grid-container{
+    width: 100%;
+    margin: 0 auto;
+}
+.grid-container * {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* Clearfix
+================================ */
+.grid-container:before,
+.grid-container:after{
+    content: " ";
+    display: table;
+    clear: both;
+}
+
+/* Columns
+================================ */
+.grid-container > [class^="col-"]{
+    float: left;
+    min-height: 1px; /*för att det inte ska kollapsa*/
+    padding: 10px 20px;   
+}  
+
+.grid-container > [class^="col-"]:last-child{
+    float: right;
+}
+
+.col-1 {width: 50%;}
+.col-2 {width: 100%;}
+.col-3 {width: 100%;}
+.col-4 {width: 100%;}
+.col-5 {width: 100%;}
+.col-6 {width: 100%;}
+
+
+
+@media (min-width: 768px){
+    .col-1 {width: 16.66%;}
+    .col-2 {width: 33.33%;}
+    .col-3 {width: 50%;}
+    .col-4 {width: 66.664%;}
+    .col-5 {width: 83.33%;}
+    .col-6 {width: 100%;}
+}
+
+/*gör så att max bredden stannar vid 1200px för skärmar större än 1300px*/
+@media(min-width: 1200px){
+    .grid-container
+    {
+        max-width: 1100px;
+    }
+}

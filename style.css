@@ -1,0 +1,1015 @@
+/*
+Theme Name: Single Site
+Author: Erika Stiebel
+Author URI: http://www.stiebel.se/
+Description: Customized theme for stubbfrasning.nu
+Version: 1.0.0
+*/
+
+
+
+/*--------------------------------------------------------------
+## Typography
+--------------------------------------------------------------*/
+body,
+button,
+input,
+select,
+textarea {
+    font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', sans-serif;
+    -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+}
+h1{
+    font-family: 'Playfair Display', serif;
+}
+/*
+h1,h2,h3,h4,h5,h6 {
+	clear: both;
+}
+*/
+/*  ==== Icon-font  =====
+    =========================  */
+@font-face {
+	font-family: 'stubbfrasning-icons';
+	src:url('fonts/stubbfrasning-icons.eot?6edulk');
+	src:url('fonts/stubbfrasning-icons.eot?#iefix6edulk') format('embedded-opentype'),
+		url('fonts/stubbfrasning-icons.ttf?6edulk') format('truetype'),
+		url('fonts/stubbfrasning-icons.woff?6edulk') format('woff'),
+		url('fonts/stubbfrasning-icons.svg?6edulk#stubbfrasning-icons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.icon {
+	font-family: 'stubbfrasning-icons';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-telephone:before {
+	content: "\e600";
+}
+.icon-location:before {
+	content: "\e601";
+}
+.icon-facebook:before {
+	content: "\e602";
+}
+.icon-email:before {
+	content: "\e603";
+}
+
+/*--------------------------------------------------------------
+## Elements
+--------------------------------------------------------------*/
+
+html {
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
+}
+
+blockquote,
+q {
+	quotes: "" "";
+}
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
+}
+
+/*--------------------------------------------------------------
+# Menu
+--------------------------------------------------------------*/
+
+nav div.grid-container{
+    position: relative;
+}
+.main-nav {
+    width: 100%;
+    position: fixed;
+    background-color: #fcfbf9;
+    top: 0px;
+    font-size: 1rem;
+    box-shadow: 0 1px 4px #888888;
+    z-index: 999;
+}
+
+h1#company-name{
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 1;
+    color: black;
+    display: inline-block;
+    margin: 14px 0 0 6px;
+    position: absolute;
+    letter-spacing: 0.5px;
+    -webkit-font-smoothing: initial;
+    -moz-osx-font-smoothing: initial;
+}
+
+
+
+.main-nav .menu-toppmeny-container {
+    max-height: 0;
+    -webkit-transition: max-height 284ms;
+    transition: max-height 284ms;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    background-color:  #fcfbf9;
+    margin-top:50px;
+    width:100%;
+    margin: 0 auto;
+    position:relative;
+    
+    }
+
+    @media screen and (min-width: 768px) {
+    .main-nav .menu-toppmeny-container {
+        display: block; 
+        transition: none;
+        -webkit-transition: none;
+        background-color: transparent;
+        top:0;
+        padding: 0;
+        margin-top:0;
+        width:auto;
+        right: 0;
+        max-height: none;
+        clip: auto;
+        position:absolute;
+        overflow: visible;
+        clear: none; 
+      } 
+    }
+
+.main-nav .menu-active{
+        max-height: 500px;
+        overflow: hidden;
+        padding-bottom: 30px;
+    }
+
+@media screen and (min-width: 768px) {
+   .main-nav .menu-active{
+       float:right;
+       display: block;
+       position: relative;
+       padding-bottom: 0px;
+    }
+}
+.menu-toppmeny-container{
+    text-align:center;
+
+    }
+
+.main-nav ul {
+    text-align: center;
+    }
+@media screen and (min-width: 768px) {
+    .main-nav ul {
+    text-align: right;
+   
+    }
+}
+.main-nav ul li {
+    padding: 10px 7px;
+    width: auto;
+    text-decoration: none;
+    text-transform: uppercase;
+    list-style: none;
+    font-size: 1.3em;
+    font-weight: 600;
+    
+}
+ @media screen and (min-width: 768px) {
+     .main-nav ul li {
+    padding: 5px 3px;
+     }
+ }
+
+.main-nav ul li a {
+    color: #4d5051;
+    text-decoration: none;
+    padding-bottom: 5px;
+    display: inline-block;
+   
+
+  }
+
+.main-nav ul li a {
+    -webkit-transition: .1s all ease-out;
+    -moz-transition: .1s all ease-out;
+    transition: .1s all ease-out;
+    border-bottom: 3px solid #fcfbf9;;
+    color: #4d5051;
+    text-decoration: none;
+}
+
+.main-nav ul li a:hover {
+    color: #4d5051;
+    border-bottom: 3px solid #e48d24;
+}
+
+.main-nav ul li.active a {
+    border-bottom: 3px solid #e48d24;
+}
+
+@media screen and (min-width: 768px) {
+    .main-nav ul li {
+        padding-top: 22px;
+        padding-left:25px;
+        padding-right:25px;
+        display:inline-block;
+        font-size: 1em;
+    } 
+}
+.main-nav .logo-container {
+    width: 15%;
+    display: inline-block;
+    margin-left:25px;
+}
+.main-nav #logo {
+    height: 40px;
+    margin: 5px 0;
+    width:auto;
+  }
+ 
+  .main-nav .menu {
+    padding-right: 10px; 
+  }
+    
+@media screen and (min-width: 768px) {
+      .main-nav .menu {
+        float: right; 
+      } 
+    
+    .main-nav #logo {
+    height: 50px;
+    margin: 5px 0;
+    width:auto;
+  }
+    
+    h1#company-name{
+    font-weight: 300;
+    font-size: 1.1rem;
+    line-height: 1;
+    color: black;
+    display: inline-block;
+    margin: 19px 0 0 6px;
+    position: absolute;
+    letter-spacing: 0.5px;
+    -webkit-font-smoothing: initial;
+    -moz-osx-font-smoothing: initial;
+}
+}
+
+.nav-button {
+    display: block;
+    position: absolute;
+    overflow: hidden;
+    float: right;
+    right: 30px;
+    top: 8px;
+    margin: 0;
+    padding: 0;
+    width: 30px;
+    height: 40px;
+    font-size: 0;
+    text-indent: -9999px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    box-shadow: none;
+    border-radius: none;
+    border: none;
+    cursor: pointer;
+    z-index: 111;
+
+}
+
+.nav-button:focus {
+  outline: none;
+}
+
+
+.nav-button span {
+  display: block;
+  position: absolute;
+  top: 19px;
+  left: 0px;
+  right: 0px;
+  height: 3px;
+  background: black;
+}
+
+.nav-button span::before,
+.nav-button span::after {
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: black;
+  content: "";
+}
+
+.nav-button span::before {
+  top: -9px;
+}
+
+.nav-button span::after {
+  bottom: -9px;
+}
+
+.nav-button span::before,
+.nav-button span::after {
+  -webkit-transition-duration: 0.3s, 0.3s;
+          transition-duration: 0.3s, 0.3s;
+  -webkit-transition-delay: 0.3s, 0;
+          transition-delay: 0.3s, 0;
+}
+
+.nav-button span::before {
+  -webkit-transition-property: top, -webkit-transform;
+          transition-property: top, transform;
+}
+
+.nav-button span::after {
+  -webkit-transition-property: bottom, -webkit-transform;
+          transition-property: bottom, transform;
+}
+
+.nav-button.active span {
+  background: none;
+}
+
+.nav-button.active span::before {
+  top: 0;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.nav-button.active span::after {
+  bottom: 0;
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.nav-button.active span::before,
+.nav-button.active span::after {
+  -webkit-transition-delay: 0, 0.3s;
+          transition-delay: 0, 0.3s;
+}
+@media screen and (min-width: 768px) {
+        .nav-button{
+            display: none;
+        }
+         .nav-button span{
+            display: none;
+        }
+    }
+
+ /*--------------------------------------------------------------
+# Form
+--------------------------------------------------------------*/
+#offert form{
+    margin: auto;
+    padding: 0;
+
+}
+@media screen and (min-width: 800px) {
+#offert form{
+    margin: auto;
+    padding: 0 10%;
+
+}
+
+}
+
+#offert form ul li.submit{
+    width:100%;
+    display: inline-block;
+    text-align: center;
+}
+
+#offert form ul li.textarea{
+    width:100%;
+    display: inline-block;
+}
+#offert form ul li{
+    width: 100%;
+    float: left;
+    padding: 0 2%;
+}
+@media screen and (min-width: 640px) {
+    #offert form ul li{
+        width: 50%;
+        float: left;
+        padding: 0 2%;
+    }
+}
+#offert form ul li.full-width-li{
+    width: 100%;
+}
+
+#offert textarea{
+    margin: 10px 0;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: 400;
+    border: solid 2px #e48d24;
+    background: #fcfbf9;
+    color:#000000;
+    height: 150px;
+    width: 100%;
+    max-width: 100%;
+    clear: both;
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+#offert input{
+    margin: 10px 0;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: 400;
+    border: solid 2px #e48d24;
+    background: #fcfbf9;
+    color:#000000;
+    width: 100%;
+    max-width: 100%;
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+
+#offert .form-block{
+    padding-top: 30px;
+    
+}
+
+#offert input[type="submit"]{
+    width: 50%;
+    background-color: #e48d24;
+    border: solid 2px #e48d24;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    margin: 10px auto;
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+#offert input[type="submit"]:hover{
+    width: 50%;
+    background-color: #e8a049;
+    border: solid 2px #e8a049;
+    color: #fcfbf9;
+    text-align: center;
+    margin: 10px auto;
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+#offert span#asterisk{
+    font-size: 1.5em;
+    vertical-align: top;
+}
+
+.ajax-loader{
+    display: none;
+}
+
+::-webkit-input-placeholder{
+    color:#595854;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:#595854;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:#595854;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+   color:#595854;
+}
+:focus::-webkit-input-placeholder {
+  opacity: 0;
+  -webkit-transition: opacity 0.35s ease-in-out;
+  transition: opacity 0.35s ease-in-out;
+}
+:focus:-moz-placeholder {
+  opacity: 0;
+  -moz-transition: opacity 0.35s ease-in-out;
+  transition: opacity 0.35s ease-in-out;
+}
+:focus::-moz-placeholder {
+  opacity: 0;
+  -moz-transition: opacity 0.35s ease-in-out;
+  transition: opacity 0.35s ease-in-out;
+}
+:focus:-ms-input-placeholder {  
+  opacity: 0;
+  -ms-transition: opacity 0.35s ease-in-out;
+  transition: opacity 0.35s ease-in-out;
+}
+
+#required-text{
+    color: #e48d24;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+
+
+/*Validation*/
+div.wpcf7-response-output{
+    border: none;
+    text-align: center;
+    color: red;
+    padding: 10px 0;
+    margin: 0;
+    margin-top: 10px;
+    width: 100%;
+    display: inline-block;
+}
+
+div.wpcf7-response-output.wpcf7-validation-errors{
+    background-color: #f8d5db;
+}
+
+div.wpcf7-response-output.wpcf7-mail-sent-ok{
+    color: #1e861e;
+    background-color: #a3dda3;
+}
+span.wpcf7-not-valid-tip{
+    display: none;
+}
+
+#offert input.wpcf7-not-valid{
+    background: #f8d5db;
+}
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+
+/*  ===== Site background image  ======
+    ===================================  */
+
+#wrapper {
+  width: 100%;
+  height: 850px;
+  padding-top: 30px;
+  box-sizing: border-box;
+  background-color: #669a63;
+  background-image: url("img/grass_mobile.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; }
+  @media screen and (min-width: 768px) {
+    #wrapper {
+      background-image: url("img/grass.jpg"); } }
+  @media screen and (min-width: 1100px) {
+    #wrapper {
+      background-attachment: fixed; } }
+
+
+/*------------------------------------------
+## Custom css 
+------------------------------------------*/
+
+
+/*  ==== Site sections  =====
+    =========================  */
+section{
+    	padding: 50px 0;
+    	font-size: 1.2rem;
+   		font-weight:400;   
+	}
+
+section h2{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 2.5rem;
+    padding-top: 20px;
+}
+section h3{
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 400;
+
+}
+
+@media screen and (min-width: 768px) {
+	section{
+    	padding: 70px 0;
+    	font-size: 1.2rem;
+   		font-weight:400;   
+	}
+    
+	section h2{
+    font-size: 3rem;
+    line-height: 4rem;
+    padding: 0;
+    }
+    
+    section h3{
+    font-size: 1.5rem;
+
+    }
+}
+
+
+
+
+/*  ------- Header section ---------  */
+
+header{
+	    padding: 40px 0;
+ 	   text-align: center;
+	}
+	
+@media screen and (min-width: 768px) {
+	header{
+	    padding: 140px 0;
+ 	   text-align: center;
+	}
+}
+
+header h2#site-description{
+   	 font-family: 'Open Sans Condensed', sans-serif;
+   	 font-size: 2.2rem;
+   	 text-transform: uppercase;
+   	 letter-spacing: -0.5px;
+   	 color: #fcfbf9;
+   
+	}
+
+@media screen and (min-width: 768px) {
+	header h2#site-description{
+   	 font-size: 3.5rem;
+   	 letter-spacing: -0.5px;
+   	 color: #fcfbf9;
+   
+	}
+}
+@media screen and (min-width: 850px) {
+    header h2#site-description{
+    font-size: 5rem;
+    
+    }
+}
+
+header h3{
+	    font-size: 1.5rem;
+ 	   color: #fcfbf9;
+ 	   font-weight: 400;
+	}
+
+@media screen and (min-width: 768px) {
+
+	header h3{
+	    font-size: 2rem;
+ 	   color: #fcfbf9;
+ 	   font-weight: 400;
+	}
+}
+
+#offer-btn{
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    font-weight: 400;
+    padding: 10px 20px;
+    border: solid 3px #e48d24;
+    background-color: #e48d24;
+    color: #fcfbf9;
+    margin-top: 50px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#offer-btn:hover{
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    font-weight: 400;
+    padding: 10px 20px;
+    background-color: #e8a049;
+    border: solid 3px #e8a049;
+    color: #fcfbf9;
+    margin-top: 50px;  
+}
+
+/*Fade header text when scrolling*/
+.fade{
+    opacity: 1;
+}
+
+@media screen and (min-width: 768px) {
+	.fade{
+   	 opacity: 1;
+	}
+}
+
+
+
+/*  ------- Preamble section ---------  */
+
+section#hem{
+    background-color: #E2DED8;
+}
+
+.preamble-big{
+    font-size: 1.3rem;
+    text-align: center;
+    line-height: 1.5;
+}
+
+@media screen and (min-width: 768px) {
+
+	.preamble-big{
+	    font-size: 1.5rem;
+	}
+}
+/*  ------- BG-images section ---------  */
+
+section#image{
+    background-image: url("img/maskin.jpg");
+    box-sizing: border-box;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+    width: 100%;
+    min-height: 300px;
+    padding-top: 30px;
+     
+}
+@media screen and (min-width: 768px) {
+    section#image{
+        min-height: 600px;
+    }
+}
+
+section#stump{
+    background-image: url("img/stump_sunset.jpg");
+    box-sizing: border-box;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    min-height: 300px;
+    padding-top: 30px;
+
+}
+@media screen and (min-width: 768px) {
+	section#stump{
+		min-height: 600px;
+	}
+}
+
+
+/*  ------- Info section ---------  */
+section#info{
+    background-color: #595854;
+    color: #fcfbf9;
+    font-size: 1rem;
+    width: 100%;
+    text-align: center;
+   
+}
+
+section#info h2{
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+section#info h3{
+    color: #e48d24;
+    font-size: 1.5rem;
+}
+
+
+#info img{
+    width: auto;
+    height: auto;
+    max-width: 80%;
+    border-radius: 50%;
+}
+@media screen and (min-width: 768px) {
+	#info img{
+    	max-width: 100%;
+	}
+	section#info h2{
+		font-size: 2.2rem;
+    	font-weight: 600;
+	
+	}
+}
+
+
+
+/*  ------- Offert section ---------  */
+
+section#offert{
+    background-color: #fcfbf9;
+}
+
+#offert p{
+    padding: 0;
+}
+
+@media screen and (min-width: 768px) {
+	#offert p{
+		padding: 0 10%;
+	}
+}
+	
+
+#offert ul li{
+    list-style: none;
+    text-align: center;
+}
+
+#offert-box1{
+    font-size: 1.3rem;
+    font-weight: 300;
+    text-align: center;
+}
+
+
+/*  ------- Om oss section ---------  */
+
+
+section#om-oss{
+    background-color: #e48d24;
+    color: #fcfbf9; 
+}
+#om-oss-box1{
+    text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+    #om-oss-box1{
+        text-align: left;
+    }
+}
+
+#om-oss-box2 p{
+    text-align: center;
+}
+
+#om-oss-box2 img{
+    border-radius: 50%;
+    max-width: 100%;
+    height: auto;
+    width: auto;
+}
+
+
+/*  ------- Kontakt section ---------  */
+
+
+section#kontakt{
+    background-image: url(img/map.jpg);
+    box-sizing: border-box;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    min-height: 300px;
+    color: #fcfbf9;
+    text-align: center;
+}
+
+.icon-location::before, .icon-email::before, .icon-telephone::before{
+   		font-size: 2rem;
+    	padding: 15px;
+    	border: solid 3px #fcfbf9;
+    	border-radius: 50%;
+	}
+@media screen and (min-width: 768px) {
+	section#kontakt{
+		    min-height: 400px;
+	}
+	.icon-location::before, .icon-email::before, .icon-telephone::before{
+   		font-size: 3rem;
+	}
+}
+.contact-info{
+    padding: 10px 0;
+    font-size: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+.contact-info{
+    padding-top: 30px;
+    padding-bottom: 0;
+    font-size: 1.3rem;
+    }
+}
+
+@media screen and (min-width: 940px) {
+.contact-info{
+    font-size: 1.6rem;
+    }
+}
+
+#kontakt a{
+    color: #fcfbf9;
+    text-decoration: none;
+}
+#kontakt a:hover{
+    color: #fcfbf9;
+    text-decoration: underline;
+}
+#kontakt a:visited{
+    color: #fcfbf9;
+    text-decoration: none;
+}
+
+/*  ------- Footer section ---------  */
+
+footer{
+    padding: 50px 0;
+    background-color: #000;
+}
+footer p{
+    color:#fcfbf9;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+
+
+
+
+
