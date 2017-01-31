@@ -5,141 +5,9 @@ Author URI: http://www.stiebel.se/
 Description: Customized theme for stubbfrasning.nu
 Version: 1.0.0
 */
+@import "variables";
+@import "general";
 
-
-
-/*--------------------------------------------------------------
-## Typography
---------------------------------------------------------------*/
-body,
-button,
-input,
-select,
-textarea {
-    font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', sans-serif;
-    -webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-
-}
-h1{
-    font-family: 'Playfair Display', serif;
-}
-/*
-h1,h2,h3,h4,h5,h6 {
-	clear: both;
-}
-*/
-/*  ==== Icon-font  =====
-    =========================  */
-@font-face {
-	font-family: 'stubbfrasning-icons';
-	src:url('fonts/stubbfrasning-icons.eot?6edulk');
-	src:url('fonts/stubbfrasning-icons.eot?#iefix6edulk') format('embedded-opentype'),
-		url('fonts/stubbfrasning-icons.ttf?6edulk') format('truetype'),
-		url('fonts/stubbfrasning-icons.woff?6edulk') format('woff'),
-		url('fonts/stubbfrasning-icons.svg?6edulk#stubbfrasning-icons') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-
-.icon {
-	font-family: 'stubbfrasning-icons';
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-
-	/* Better Font Rendering =========== */
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
-.icon-telephone:before {
-	content: "\e600";
-}
-.icon-location:before {
-	content: "\e601";
-}
-.icon-facebook:before {
-	content: "\e602";
-}
-.icon-email:before {
-	content: "\e603";
-}
-
-/*--------------------------------------------------------------
-## Elements
---------------------------------------------------------------*/
-
-html {
-	box-sizing: border-box;
-    -moz-box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-	box-sizing: inherit;
-}
-
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-	content: "";
-}
-
-blockquote,
-q {
-	quotes: "" "";
-}
-
-/*--------------------------------------------------------------
-# Media
---------------------------------------------------------------*/
-
-/* Make sure embeds and iframes fit their containers. */
-embed,
-iframe,
-object {
-	max-width: 100%;
-}
-
-/*--------------------------------------------------------------
-# Accessibility
---------------------------------------------------------------*/
-/* Text meant only for screen readers. */
-.screen-reader-text {
-	clip: rect(1px, 1px, 1px, 1px);
-	position: absolute !important;
-	height: 1px;
-	width: 1px;
-	overflow: hidden;
-}
-
-.screen-reader-text:hover,
-.screen-reader-text:active,
-.screen-reader-text:focus {
-	background-color: #f1f1f1;
-	border-radius: 3px;
-	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-	clip: auto !important;
-	color: #21759b;
-	display: block;
-	font-size: 14px;
-	font-size: 0.875rem;
-	font-weight: bold;
-	height: auto;
-	left: 5px;
-	line-height: normal;
-	padding: 15px 23px 14px;
-	text-decoration: none;
-	top: 5px;
-	width: auto;
-	z-index: 100000; /* Above WP toolbar. */
-}
 
 /*--------------------------------------------------------------
 # Menu
@@ -151,7 +19,7 @@ nav div.grid-container{
 .main-nav {
     width: 100%;
     position: fixed;
-    background-color: #fcfbf9;
+    background-color: $nearly-white;
     top: 0px;
     font-size: 1rem;
     box-shadow: 0 1px 4px #888888;
@@ -184,12 +52,12 @@ h1#company-name{
     width:100%;
     margin: 0 auto;
     position:relative;
-    
+
     }
 
     @media screen and (min-width: 768px) {
     .main-nav .menu-toppmeny-container {
-        display: block; 
+        display: block;
         transition: none;
         -webkit-transition: none;
         background-color: transparent;
@@ -202,8 +70,8 @@ h1#company-name{
         clip: auto;
         position:absolute;
         overflow: visible;
-        clear: none; 
-      } 
+        clear: none;
+      }
     }
 
 .main-nav .menu-active{
@@ -231,7 +99,7 @@ h1#company-name{
 @media screen and (min-width: 768px) {
     .main-nav ul {
     text-align: right;
-   
+
     }
 }
 .main-nav ul li {
@@ -242,7 +110,7 @@ h1#company-name{
     list-style: none;
     font-size: 1.3em;
     font-weight: 600;
-    
+
 }
  @media screen and (min-width: 768px) {
      .main-nav ul li {
@@ -255,7 +123,7 @@ h1#company-name{
     text-decoration: none;
     padding-bottom: 5px;
     display: inline-block;
-   
+
 
   }
 
@@ -284,7 +152,7 @@ h1#company-name{
         padding-right:25px;
         display:inline-block;
         font-size: 1em;
-    } 
+    }
 }
 .main-nav .logo-container {
     width: 15%;
@@ -296,22 +164,22 @@ h1#company-name{
     margin: 5px 0;
     width:auto;
   }
- 
+
   .main-nav .menu {
-    padding-right: 10px; 
+    padding-right: 10px;
   }
-    
+
 @media screen and (min-width: 768px) {
       .main-nav .menu {
-        float: right; 
-      } 
-    
+        float: right;
+      }
+
     .main-nav #logo {
     height: 50px;
     margin: 5px 0;
     width:auto;
   }
-    
+
     h1#company-name{
     font-weight: 300;
     font-size: 1.1rem;
@@ -510,7 +378,7 @@ h1#company-name{
 
 #offert .form-block{
     padding-top: 30px;
-    
+
 }
 
 #offert input[type="submit"]{
@@ -575,7 +443,7 @@ h1#company-name{
   -moz-transition: opacity 0.35s ease-in-out;
   transition: opacity 0.35s ease-in-out;
 }
-:focus:-ms-input-placeholder {  
+:focus:-ms-input-placeholder {
   opacity: 0;
   -ms-transition: opacity 0.35s ease-in-out;
   transition: opacity 0.35s ease-in-out;
@@ -643,7 +511,7 @@ span.wpcf7-not-valid-tip{
 
 
 /*------------------------------------------
-## Custom css 
+## Custom css
 ------------------------------------------*/
 
 
@@ -652,7 +520,7 @@ span.wpcf7-not-valid-tip{
 section{
     	padding: 50px 0;
     	font-size: 1.2rem;
-   		font-weight:400;   
+   		font-weight:400;
 	}
 
 section h2{
@@ -674,15 +542,15 @@ section h3{
 	section{
     	padding: 70px 0;
     	font-size: 1.2rem;
-   		font-weight:400;   
+   		font-weight:400;
 	}
-    
+
 	section h2{
     font-size: 3rem;
     line-height: 4rem;
     padding: 0;
     }
-    
+
     section h3{
     font-size: 1.5rem;
 
@@ -698,7 +566,7 @@ header{
 	    padding: 40px 0;
  	   text-align: center;
 	}
-	
+
 @media screen and (min-width: 768px) {
 	header{
 	    padding: 140px 0;
@@ -712,7 +580,7 @@ header h2#site-description{
    	 text-transform: uppercase;
    	 letter-spacing: -0.5px;
    	 color: #fcfbf9;
-   
+
 	}
 
 @media screen and (min-width: 768px) {
@@ -720,13 +588,13 @@ header h2#site-description{
    	 font-size: 3.5rem;
    	 letter-spacing: -0.5px;
    	 color: #fcfbf9;
-   
+
 	}
 }
 @media screen and (min-width: 850px) {
     header h2#site-description{
     font-size: 5rem;
-    
+
     }
 }
 
@@ -766,7 +634,7 @@ header h3{
     background-color: #e8a049;
     border: solid 3px #e8a049;
     color: #fcfbf9;
-    margin-top: 50px;  
+    margin-top: 50px;
 }
 
 /*Fade header text when scrolling*/
@@ -811,7 +679,7 @@ section#image{
     width: 100%;
     min-height: 300px;
     padding-top: 30px;
-     
+
 }
 @media screen and (min-width: 768px) {
     section#image{
@@ -844,7 +712,7 @@ section#info{
     font-size: 1rem;
     width: 100%;
     text-align: center;
-   
+
 }
 
 section#info h2{
@@ -871,7 +739,7 @@ section#info h3{
 	section#info h2{
 		font-size: 2.2rem;
     	font-weight: 600;
-	
+
 	}
 }
 
@@ -892,7 +760,7 @@ section#offert{
 		padding: 0 10%;
 	}
 }
-	
+
 
 #offert ul li{
     list-style: none;
@@ -911,7 +779,7 @@ section#offert{
 
 section#om-oss{
     background-color: #e48d24;
-    color: #fcfbf9; 
+    color: #fcfbf9;
 }
 #om-oss-box1{
     text-align: center;
@@ -1007,9 +875,3 @@ footer p{
     font-size: 0.9rem;
     text-align: center;
 }
-
-
-
-
-
-

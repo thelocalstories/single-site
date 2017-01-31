@@ -33,3 +33,6 @@ pids
 
 # Atom CTAGS
 .tags
+
+# Wordpress css-file
+style.css
